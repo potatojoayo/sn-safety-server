@@ -1,7 +1,8 @@
+from user.models import User
 from django.contrib.postgres.fields import ArrayField
+import datetime
 from django.db import models
 from user.models import User
-from .base_posting import BasePosting
 
 class Posting(models.Model): 
 
@@ -33,4 +34,29 @@ class Posting(models.Model):
     download = models.IntegerField(default=0)
     secret = models.BooleanField(default=False)
 
+
+
+def upload_to(instance, filename):
+    now = datetime.datetime.now()
+    now = now.strftime('%Y-%m-%d_%H%M')
+    filebase, extension = filename.split('.')
+    return 'assets/{}.{}'.format(filebase+'-'+now,extension)
+
+class Introduction(models.Model): 
+
+    title = models.CharField(max_length=100)
+    course_introduction = models.TextField()
+    instructor_introduction= models.CharField(max_length=200) 
+    instructor_name = models.CharField(max_length=10)
+    profile_image = models.ImageField(null=True, blank=True, upload_to=upload_to)
+    job = models.CharField(max_length=100)
+
+
+
+class Comment(models.Model):
+
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, related_name='comments') 
+    posting = models.ForeignKey(Posting, on_delete=models.CASCADE, related_name='comments', default=9)
+    contents = models.TextField()
+    date = models.DateField(auto_now_add=True, blank=True)
 

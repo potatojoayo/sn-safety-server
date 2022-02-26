@@ -7934,3 +7934,171 @@ February 26, 2022 - 18:31:31
 Django version 4.0.2, using settings 'server.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
+/home/ubuntu/server/server/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:33:12
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/server/posting/viewsets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:33:43
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/server/posting/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:34:26
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/server/posting/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:34:30
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/server/posting/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:34:34
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/server/posting/models/__init__.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 115, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute
+    autoreload.check_errors(django.setup)()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/contrib/admin/apps.py", line 27, in ready
+    self.module.autodiscover()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/contrib/admin/__init__.py", line 24, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/module_loading.py", line 57, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/server/posting/admin.py", line 31, in <module>
+    admin.site.register(Analysis,AnalysisAdmin)
+NameError: name 'Analysis' is not defined
+/home/ubuntu/server/posting/viewsets.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 115, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute
+    autoreload.check_errors(django.setup)()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/contrib/admin/apps.py", line 27, in ready
+    self.module.autodiscover()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/contrib/admin/__init__.py", line 24, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/module_loading.py", line 57, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/server/posting/admin.py", line 31, in <module>
+    admin.site.register(Analysis,AnalysisAdmin)
+NameError: name 'Analysis' is not defined
+/home/ubuntu/server/posting/admin.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 127, in inner_run
+    self.check_migrations()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 505, in check_migrations
+    executor = MigrationExecutor(connections[DEFAULT_DB_ALIAS])
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/db/migrations/executor.py", line 18, in __init__
+    self.loader = MigrationLoader(self.connection)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/db/migrations/loader.py", line 53, in __init__
+    self.build_graph()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/db/migrations/loader.py", line 217, in build_graph
+    self.load_disk()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/db/migrations/loader.py", line 116, in load_disk
+    migration_module = import_module(migration_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/server/posting/migrations/0001_initial.py", line 5, in <module>
+    import posting.models.introduction
+ModuleNotFoundError: No module named 'posting.models.introduction'; 'posting.models' is not a package
+/home/ubuntu/server/posting/migrations/0001_initial.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 26, 2022 - 18:38:12
+Django version 4.0.2, using settings 'server.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
