@@ -6,6 +6,9 @@ from posting.viewsets import *
 router = DefaultRouter()
 router.register('posting',PostingViewSet, 'posting')
 router.register('introduction',IntroductionViewSet,'introduction')
+router.register('comment',CommentViewSet,'comment')
+router.register('watch',UserWatchVideoViewSet,'watch')
+router.register('files',PostingFilesViewSet,'files')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

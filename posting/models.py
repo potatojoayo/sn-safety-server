@@ -4,6 +4,12 @@ import datetime
 from django.db import models
 from user.models import User
 
+def upload_to(instance, filename):
+    now = datetime.datetime.now()
+    now = now.strftime('%Y-%m-%d_%H%M')
+    filebase, extension = filename.split('.')
+    return '{}.{}'.format(filebase+'-'+now,extension)
+
 class Posting(models.Model): 
 
     CATEGORY_CHOICES = [
@@ -22,25 +28,33 @@ class Posting(models.Model):
     view = models.IntegerField(default=0, blank=True)
     title = models.CharField(max_length=255, null=False)
     date = models.DateTimeField(auto_now_add=True) 
-    contents = models.TextField(null=True)
+    contents = models.TextField(null=True, blank=True)
     youtube_id = models.CharField(max_length=255, null=True) 
+    meeting_date = models.DateTimeField(null=True, blank=True)
     meeting_id = models.CharField(max_length=20, null=True)
     survey_url = models.CharField(max_length=200, null=True)
     category = models.CharField(null=False, choices=CATEGORY_CHOICES, max_length=20)
-    files = ArrayField( 
-        models.CharField(max_length=200)
+    '''    files = ArrayField( 
+        models.FileField(upload_to=upload_to)
         ,null=True, blank=True
     )
-    download = models.IntegerField(default=0)
+''' 
+    download = models.IntegerField(default=0, null=False)
     secret = models.BooleanField(default=False)
 
 
 
-def upload_to(instance, filename):
-    now = datetime.datetime.now()
-    now = now.strftime('%Y-%m-%d_%H%M')
-    filebase, extension = filename.split('.')
-    return 'assets/{}.{}'.format(filebase+'-'+now,extension)
+
+
+class UserWatchVideo(models.Model):
+
+    posting = models.ForeignKey(Posting, on_delete=models.CASCADE, related_name='user_watch_video')
+    user = models.ForeignKey(User,on_delete=models.CASCADE, blank=True)
+    percentage = models.IntegerField()
+
+    class Meta:
+        unique_together = ('posting','user')
+
 
 class Introduction(models.Model): 
 
@@ -55,8 +69,14 @@ class Introduction(models.Model):
 
 class Comment(models.Model):
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, related_name='comments') 
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, related_name='comments',null=True) 
     posting = models.ForeignKey(Posting, on_delete=models.CASCADE, related_name='comments', default=9)
     contents = models.TextField()
-    date = models.DateField(auto_now_add=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True)
+
+class PostingFiles(models.Model):
+
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, related_name='posting_files',null=True) 
+    posting = models.ForeignKey(Posting, on_delete=models.CASCADE, related_name='posting_files')
+    file = models.FileField()
 
